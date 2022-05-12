@@ -69,7 +69,7 @@ The static files are generated in the */project/build/* directory, which can the
 
 ## Requirements
 
-* Python 3.9.5
+* Python 3.10.4
 * Flask - micro-framework for web application development
 * Jinga - templating engine
 * Frozen-Flask - generates static files from Flask routes
