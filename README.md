@@ -11,6 +11,8 @@ Universe: https://uu.netlify.app/
 used to generate the static files based on the routes specified in the Flask app.  These static files are hosted on
 [Netlify](https://www.netlify.com).
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9ed82aed-cfb0-42fb-9289-dc4758fe743c/deploy-status)](https://app.netlify.com/sites/unseen-uni/deploys)
+
 ## Installation Instructions
 
 Pull down the source code from this GitLab repository:
