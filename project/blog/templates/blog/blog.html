@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blog_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="blog-container">
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/key.jpg') }}"
+          alt="Black Pycharm"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='apt-key') }}">
+                <h2 class="recipe-title-long">apt-key deprecation</h2></a>
+            <p>After upgrading to Ubuntu 22.04, some repositories are disabled, and deprecation warnings on
+                its signing keys are given. <em>Warning: apt-key is deprecated. Manage
+        keyring files in trusted.gpg.d instead (see apt-key(8))</em></p>
+            <p class="blog-post-card__date">Published on May 12, 2022</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/larch.jpg') }}"
+          alt="The Larch"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='completely-different') }}">
+                <h2 class="recipe-title-long">And now for something completely different</h2></a>
+            <p>And when you least expect it, there is a Larch. Authorities in Europe are responding to GDPR violations ... most importantly, the Transparency &amp; Consent Framework (TCF)</p>
+            <p class="blog-post-card__date">Published on February 15, 2022</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/nowai.png') }}"
+          alt="Nowai"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='nowai') }}">
+                <h2 class="recipe-title-long">No wai</h2></a>
+            <p>The UN Shared Rohingya Data Without Informed Consent putting the lives of people at risk. The UN
+                comments on that with a Statement and what follows is an explosion of articles and statements
+                on the internet.</p>
+            <p class="blog-post-card__date">Published on June 24, 2021</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/shades-of-grey.jpg') }}"
+          alt="Shades of grey"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='grey-areas') }}">
+                <h2 class="recipe-title-long">Grey areas</h2></a>
+            <p>The creation of legal grey areas, per three examples, using the example of sexual consent for clarity
+                and because that is where the consent concept originated and is expanding from every day life for digital consent.</p>
+            <p class="blog-post-card__date">Published on May 07, 2021</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/stacksquared.png') }}"
+          alt="XKCD Stack"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='internet-insecurity-trends') }}">
+                <h2 class="recipe-title-long">Internet (in)security trends</h2></a>
+            <p>Gotta feel kind of bad for nation-state hackers who spend years implanting and cultivating some hardware
+                exploit, only to discover the entire target database is already exposed to anyone with a web browser.</p>
+            <p class="blog-post-card__date">Published on April 22, 2021</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/panopticon.png') }}"
+          alt="Panopticon plan"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='panopticon') }}">
+                <h2 class="recipe-title-long">Panopticon</h2></a>
+            <p>Social theorist Jeremy Bentham's original projection for a panoptic prison, made it so a prisoner never
+                knew if he was being watched. A circular prison with a single guard tower in the middle was the original
+                blueprint for the structure.</p>
+            <p class="blog-post-card__date">Published on April 22, 2021</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/memento.jpg') }}"
+          alt="Memento"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='not-enough') }}">
+                <h2 class="recipe-title-long">It is not enough!</h2></a>
+            <p>The GDPR and ICCPR are not enough, and that is not only because of the tremendous struggle to implement
+                their rules. The GDPR for example, actually legitimises the entire information industry by making it a grey area.</p>
+            <p class="blog-post-card__date">Published on April 21, 2021</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/scenario-logics.png') }}"
+          alt="Scenario logics quadrants"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='scenario-logics') }}">
+                <h2 class="recipe-title-long">Scenario logics</h2></a>
+            <p>Scenario logic: Plots, likely effects, measurables and observables for five
+                scenarios: Surveillance society, Interventions by governments, Hacker groups rule, Self-organising
+                (protection) societies, and Obliviousness and congruence.</p>
+            <p class="blog-post-card__date">Published on April 06, 2021</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/polyp.png') }}"
+          alt="Please explain"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='legitimisation-patterns') }}">
+                <h2 class="recipe-title-long">Legitimisation patterns</h2></a>
+            <p>Legitimate power is based on a structural relationship (economic stratification or other forms of
+                hierarchy) between influencing agents and targets. Implicitly,
+                or explicitly, the agent says, “I have a right to ask you to do this, and you have an
+                obligation to comply”.</p>
+            <p class="blog-post-card__date">Published on October 13, 2020</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/strangelove.png') }}"
+          alt="Strangelove"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='ghost-stories') }}">
+                <h2 class="recipe-title-long">Governmental ghost stories</h2></a>
+            <p>This old-fashioned horror anthology isn't terrifying or scream-inducing; instead, it is closer in spirit
+                to the moody, clammy, atmospheric English movies of decades past, and parodies thereof. A
+                ghostly proposal from GCHQ. We are reminded of Dr. Strangelove.</p>
+            <p class="blog-post-card__date">Published on February 17, 2020</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/surveillance.jpg') }}"
+          alt="Surveillance"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='cracked-architecture') }}">
+                <h2 class="recipe-title-long">Surveillance architecture</h2></a>
+            <p>Chances are that every document you create, every digital photograph you take, every music file you
+                download, and so on, all have little bits of metadata which can leak vital information about your
+                identity, and surveillance and censorship go hand in hand ...</p>
+            <p class="blog-post-card__date">Published on November 02, 2019</p>
+        </div>
+    </div>
+
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/cyber-warrior.jpg') }}"
+          alt="Cyber warrior"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='information-war-technology') }}">
+                <h2 class="recipe-title-long">Information war technology</h2></a>
+            <p>States are attacking other states, their own people for maintaining dominance, corporations do to get
+                you to buy their stuff, political groups are attacking other political groups for believing in
+                something else, and individuals take out their frustration on others.</p>
+            <p class="blog-post-card__date">Published on September 27, 2019</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/udhr.jpg') }}"
+          alt="Please explain"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='udhr') }}">
+                <h2 class="recipe-title-long">Universal Declaration of Human Rights (UDHR)</h2></a>
+            <p>The UDHR consists of 30 articles affirming an individual's rights which,
+                although not legally binding in themselves, have been elaborated in international treaties,
+                economic transfers, regional human rights instruments, national constitutions, and other laws.</p>
+            <p class="blog-post-card__date">Published on September 08, 2019</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/google-trackers.jpg') }}"
+          alt="Google trackers"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='cracked-surveillance') }}">
+                <h2 class="recipe-title-long">Corporate surveillance state</h2></a>
+            <p>There was of course no way of knowing whether you were being watched at any given moment. How often, or
+                on what system, the Thought Police plugged in on any individual wire was guesswork. It was even conceivable that they watched everybody all the time.</p>
+            <p class="blog-post-card__date">Published on May 17, 2019</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/focusing_five_eyes.jpg') }}"
+          alt="On the fly architecture"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='fvey-alliance') }}">
+                <h2 class="recipe-title-long">Five Eyes alliance</h2></a>
+            <p>The UKUSA agreement was signed in March 1946 for cooperation in signals intelligence between the UK
+                and the USA. It included more and more countries, and was a secret agreement until the Australian
+                Defence Signals Directorate disclosed it.</p>
+            <p class="blog-post-card__date">Updated on August 28, 2018</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/integration.jpg') }}"
+          alt="Integration"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='iccpr') }}">
+                <h2 class="recipe-title-long">International Covenant on Civil and Political Rights (ICCPR)</h2></a>
+            <p>No one shall be subjected to arbitrary or unlawful interference with his privacy, family, home or correspondence, nor to unlawful attacks on his honour and reputation.</p>
+            <p class="blog-post-card__date">Published on May 15, 2018</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/oecd.png') }}"
+          alt="Moon phases"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='oecd-recommendations') }}">
+                <h2 class="recipe-title-long">OECD Recommendations</h2></a>
+            <p>The OECD provides a platform to identify good practices and coordinate domestic and international policies of its members. The United States, while endorsing the recommendations, is not implementing them.</p>
+            <p class="blog-post-card__date">Published on May 15, 2018</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/data-retention.png') }}"
+          alt="Hidden debt"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='data-retention-legislation-eu') }}">
+                <h2 class="recipe-title-long">Data retention legislation EU</h2></a>
+            <p>The basic standard laid down by the CJEU is not even adhered to by most EU member states, despite their
+                legal obligation to comply with the Court’s jurisprudence.</p>
+            <p class="blog-post-card__date">Published on April 15, 2018</p>
+        </div>
+    </div>
+
+        <div class="blog-post-card card-overlay">
+        <img
+          src="{{ url_for('static', filename='img/gdpr.jpg') }}"
+          alt="GDPR"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='gdpr') }}">
+                <h2 class="recipe-title-long">General Data Protection Regulation (GDPR)</h2></a>
+            <p>The old Data Protection Directive of 1995 was outdated. It failed to cover social
+                networking sites, cloud computing, location-based services, smart cards and biometric data.</p>
+            <p class="blog-post-card__date">Published on April 15, 2018</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

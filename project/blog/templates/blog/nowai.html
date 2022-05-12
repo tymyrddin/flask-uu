@@ -1,0 +1,34 @@
+{% extends "blogpost.html" %}
+
+{% block title %}
+<h1>...</h1>
+{% endblock %}
+
+{% block date %}
+<p class="blogpost__date">Published on June 24, 2021</p>
+{% endblock %}
+
+{% block image %}
+<img
+  src="{{ url_for('static', filename='img/nowai.png') }}"
+  alt="Nowai"
+  class="blogpost__image" />
+{% endblock %}
+
+{% block article %}
+ <p>The <a
+href="https://www.hrw.org/news/2021/06/15/un-shared-rohingya-data-without-informed-consent">UN
+Shared Rohingya Data Without Informed Consent</a> putting the
+lives of people at risk.</p>
+<p>The UN comments on that with a <a
+href="https://www.unhcr.org/en-us/news/press/2021/6/60c85a7b4/news-comment-statement-refugee-registration-data-collection-bangladesh.html">Statement
+on refugee registration and data collection in Bangladesh</a>.</p>
+<p>What follows is an explosion of articles and statements on the
+internet, of which many try to save the day on their <a
+href="https://github.com/tymyrddin/amygdala-umbrella/blob/main/DA-threat-model/adversaries/Data-scientists.md">data
+science projects</a> by promising change or discussing the
+necessity for change to address the symptoms of a fundamentally
+broken system of incentives and accountability.</p>
+<p>The system itself remains unaddressed. Thank you Michael, for
+adressing that it is not being adressed.</p>
+{% endblock %}

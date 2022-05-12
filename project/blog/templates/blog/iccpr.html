@@ -1,0 +1,47 @@
+{% extends "blogpost.html" %}
+
+{% block title %}
+<h1>International Covenant on Civil and Political Rights (ICCPR)</h1>
+{% endblock %}
+
+{% block date %}
+<p class="blogpost__date">Published on May 15, 2018</p>
+{% endblock %}
+
+{% block image %}
+<img
+  src="{{ url_for('static', filename='img/integration.jpg') }}"
+  alt="Integration"
+  class="blogpost__image" />
+{% endblock %}
+
+{% block article %}
+<p>The <a
+href="https://www.ohchr.org/en/professionalinterest/pages/ccpr.aspx">International
+Covenant on Civil and Political Rights (ICCPR)</a>
+is a multilateral treaty adopted by the United
+Nations General Assembly with resolution 2200A
+(XXI) on 16 December 1966, and in force from 23
+March 1976 in accordance with Article 49 of the
+covenant. Article 49 allowed that the covenant
+will enter into force three months after the date
+of the deposit of the thirty-fifth instrument of
+ratification or accession. The covenant commits
+its parties to respect the civil and political
+rights of individuals, including the right to
+life, freedom of religion, freedom of speech,
+freedom of assembly, electoral rights and rights
+to due process and a fair trial. See the <a
+href="https://indicators.ohchr.org/">OHCHR
+dashboard</a> for which countries signed up for
+what.</p>
+<h2>Article 17</h2>
+<ul>
+<li>No one shall be subjected to arbitrary or
+unlawful interference with his privacy, family,
+home or correspondence, nor to unlawful attacks
+on his honour and reputation.</li>
+<li>Everyone has the right to the protection of
+the law against such interference or attacks.</li>
+</ul>
+{% endblock %}

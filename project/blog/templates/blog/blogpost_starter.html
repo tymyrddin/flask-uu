@@ -1,0 +1,21 @@
+{% extends "blogpost.html" %}
+
+{% block title %}
+<h1>...</h1>
+{% endblock %}
+
+{% block date %}
+<p class="blogpost__date">Published on April 26, 2022</p>
+{% endblock %}
+
+{% block image %}
+<img
+  src="{{ url_for('static', filename='img/....png') }}"
+  alt="..."
+  class="blogpost__image" />
+{% endblock %}
+
+{% block article %}
+<p>...</p>
+<p>...</p>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "blogpost.html" %}
+
+{% block title %}
+<h1>And now for something completely different</h1>
+{% endblock %}
+
+{% block date %}
+<p class="blogpost__date">Published on February 15, 2022</p>
+{% endblock %}
+
+{% block image %}
+<img
+  src="{{ url_for('static', filename='img/larch.jpg') }}"
+  alt="The Larch"
+  class="blogpost__image" />
+{% endblock %}
+
+{% block article %}
+<p>And when you least expect it, there is a Larch.</p>
+<h2>Google Fonts</h2>
+<p>The Landgericht München’s third civil chamber in Munich,
+found that a website, by including Google-Fonts-hosted font on
+its pages, <a
+href="https://dejure.org/dienste/vernetzung/rechtsprechung?Text=3%20O%2017493/20">passed
+the unidentified plaintiff’s IP address to Google without
+authorization and without a legitimate reason for doing so</a>.
+This violates the GDPR.</p>
+<h2>Google and Facebook Cookie consent</h2>
+<p>CNIL, the French data protection regulator, has <a
+href="https://www.cnil.fr/en/cookies-cnil-fines-google-total-150-million-euros-and-facebook-60-million-euros-non-compliance">issued
+fines to Google and Facebook for making it harder to refuse
+cookies than to accept them</a>. The CNIL noted that the
+websites facebook.com, google.fr, and youtube.com offer a
+button allowing the user to immediately accept cookies. But
+they do not provide an equivalent solution (button or other
+mechanism) enabling the website user to just as easily refuse
+the use of these cookies.</p>
+<h2>Transparency &amp; Consent Framework (TCF)</h2>
+<p>When users visit a website or application for the first time,
+an interface (a Consent Management platform or CMP) will pop
+up where the user may consent to the collection and sharing of
+their personal data, or object to various types of processing
+based on the legitimate interests of ad tech vendors. The TCF
+facilitates the capture of the users’ preferences which are
+then shared with the organisations using the <a
+href="https://github.com/tymyrddin/amygdala-umbrella/blob/main/DA-threat-model/adversaries/Advertising-eco-systems.md">Open
+Real Time Bidding system</a>.</p>
+<p>The Belgian data protection authority (APD) determined that
+IAB Europe acts as a data controller for the registration of
+individual users’ preferences by means of the Transparency and
+Consent String, linked to an identified user. As such, it
+finds <a
+href="https://gdprhub.eu/index.php?title=APD/GBA_(Belgium)_-_21/2022">IAB
+Europe in violation of the GDPR with its pop-up consent
+system</a> which is used by companies to make ads and online
+tracking compliant with the GDPR. The decision has
+implications for the entire online ad industry, as data
+collected through the system must now be deleted.</p>
+<h2>Google Analytics</h2>
+<p>Google Analytics provides statistics on website traffic.
+After receiving complaints from the NOYB association, the CNIL
+analysed the conditions under which the data collected through
+this service is transferred to the United States. <a
+href="https://www.cnil.fr/en/use-google-analytics-and-data-transfers-united-states-cnil-orders-website-manageroperator-comply">The
+CNIL considers these transfers illegal</a> and ordered a
+French website manager to comply with the GDPR and, if
+necessary, to stop using this service.</p>
+<p>For Wordpress sites, a good alternative could be <a
+href="https://burst-statistics.com/">burst</a>.</p>
+{% endblock %}

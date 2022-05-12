@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recipe-container">
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/ymrir">
+            <img
+                src="{{ url_for('static', filename='portfolio/12.jpg') }}"
+                alt="DL"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Network scripts</h2>
+                <p>10+ recipes</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/reomais">
+            <img
+                src="{{ url_for('static', filename='portfolio/4.jpg') }}"
+                alt="DL"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Web application scripts</h2>
+                <p>6 recipes</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/nirridit">
+            <img
+                src="{{ url_for('static', filename='portfolio/5.jpg') }}"
+                alt="DA"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Scripts on Windows 10</h2>
+                <p>3 recipes</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/darkest-forest">
+            <img
+                src="{{ url_for('static', filename='portfolio/3.jpg') }}"
+                alt="ML"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Attack trees</h2>
+                <p>10+ recipes</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/amygdala-umbrella">
+            <img
+                src="{{ url_for('static', filename='portfolio/2.jpg') }}"
+                alt="Data Wrangling"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Threat modelling</h2>
+                <p>3 recipes</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/shiny-shrinkage">
+            <img
+                src="{{ url_for('static', filename='portfolio/11.jpg') }}"
+                alt="Data Wrangling"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Mitigations</h2>
+                <p>10+ recipes</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+{% endblock %}

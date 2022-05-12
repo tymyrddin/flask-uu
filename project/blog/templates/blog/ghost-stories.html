@@ -1,0 +1,74 @@
+{% extends "blogpost.html" %}
+
+{% block title %}
+<h1>Governmental ghost stories</h1>
+{% endblock %}
+
+{% block date %}
+<p class="blogpost__date">Published on February 17, 2020</p>
+{% endblock %}
+
+{% block image %}
+<img
+  src="{{ url_for('static', filename='img/strangelove.png') }}"
+  alt="Strangelove"
+  class="blogpost__image" />
+{% endblock %}
+
+{% block article %}
+    <p>This old-fashioned horror anthology isn’t terrifying or
+    scream-inducing; instead, it’s closer in spirit to the
+    moody, clammy, atmospheric English movies of decades past,
+    and parodies thereof. I am again reminded of Dr.
+    Strangelove.</p>
+    <h2>The UK Investigatory Powers Act (IPA)</h2>
+    <p>Beginning of 2018, <a
+    href="https://www.theguardian.com/uk-news/2018/jan/30/uk-mass-digital-surveillance-regime-ruled-unlawful-appeal-ruling-snoopers-charter">the
+    European Court of Justice ruled that the UK’s Snooper’s
+    Charter is unlawful</a>. In 2018, Australia’s parliament
+    passed legislation that allows intelligence and law
+    enforcement agencies to demand access to encrypted
+    communications data. And the GCHQ now wantsss that
+    preciousss information too. Secure messaging platforms such
+    as WhatsApp and iMessage can be forced to create backdoors
+    or to operate a “ghost protocol” that “CC’s” an encrypted
+    message to a third-party when it is sent. A state run
+    Man-in-the-Middle (MitM)?!?</p>
+    <p>The ghastly ghostly proposal from GCHQ was made late 2018
+    by its director Ian Levy, and involved “silently adding a
+    law enforcement participant to a group chat or call”,
+    according to the <a
+    href="https://www.lawfareblog.com/principles-more-informed-exceptional-access-debate">“Principles
+    for a More Informed Exceptional Access Debate” article</a>
+    written by Ian Levy and Crispin Robinson.</p>
+    <h2>The Letter</h2>
+    <p>Then a coalition of 47 organisations and individuals wrote
+    to the GCHQ, raising objections to the proposal to insert
+    privileged users in encrypted conversations, in order for
+    the government to spy on such interactions without actually
+    breaking encryption. The GCHQ “ghost protocol” would
+    seriously undermine user security and trust. O Really?!?</p>
+    <p>And while I do think it is an excellent idea to bring it to
+    the table, among the signets are also Apple and Facebook’s
+    WhatsUp.</p>
+    <p>Ironically, Facebook is the biggest and worst example of
+    how business models arrogate and appropriate data about us,
+    read all our emails, comments, and other things we put
+    online and behind the scenes with friends, family, business
+    connections, in order that this content might be tied into
+    our profiles and make us easier targets for their paying
+    customers – the advertisers and marketers of big and small
+    organisations – to drill down into our inner desires and
+    close that all important sale. And Apple continues to give
+    the impression it thinks privacy is worth fighting for, even
+    if only as a business Unique Selling Point.</p>
+    <p>The intrusive activities and long-term business models of
+    “data science” are Silicon Valley’s very own(ed) ghost
+    protocol.</p>
+
+<img
+  src="{{ url_for('static', filename='img/memetics.png') }}"
+  alt="Strangelove"
+  width="100%"
+  float="unset" />
+{% endblock %}

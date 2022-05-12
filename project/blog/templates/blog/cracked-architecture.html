@@ -1,0 +1,43 @@
+{% extends "blogpost.html" %}
+
+{% block title %}
+<h1>Cracked: Surveillance architecture</h1>
+{% endblock %}
+
+{% block date %}
+<p class="blogpost__date">Published on November 02, 2019</p>
+{% endblock %}
+
+{% block article %}
+     <p><em>To put it bluntly, metadata is hidden data that can fuck
+    you over. Fuck you over real hard and rough like, savvy? Often
+    defined as “data about data,” metadata is information about a
+    specific file that’s often included within the file itself but
+    that’s often not readily visible or modifiable to the end-user
+    when z is viewing the file in the standard application that z
+    would typically use to view the file. In other words, metadata
+    provides background information about a file. Chances are that
+    every document you create, every digital photograph you take,
+    every music file you download, and so on, all have little bits
+    of metadata which can leak vital information about your
+    identity.</em> ~ <a
+    href="http://www.textfiles.com/uploads/diz-usp3.txt">The
+    dangers of metadata, 2008</a></p>
+    <a href="https://labs.rs/en/invisible-infrastructures-surveillance-achitecture/"><img src="{{ url_for('static', filename='img/surveillance-architecture.png') }}" width=100%></a>
+    <a href="https://labs.rs/en/invisible-infrastructures-data-flow/"><img src="{{ url_for('static', filename='img/data-flow.png') }}" width=100%></a>
+    <p>Surveillance and censorship go hand in hand, what else would
+    surveillance be for other than to keep subjects obedient.</p>
+    <ul>
+        <li>Surveillance is carried out by just about everybody,
+        parents, teachers, neighbours, organised private groups,
+        corporations and governments, and we are not helpless, we
+        can <a
+        href="https://github.com/tymyrddin/shiny-shrinkage/blob/master/data/Avoiding-surveillance.md">avoid
+        surveillance</a> as best as we can.</li>
+        <li>Likewise, censorship can be carried out by everybody as
+        well. <a
+        href="https://github.com/tymyrddin/shiny-shrinkage/blob/master/data/Circumventing-censorship/">And
+        we can try to circumvent censorship</a> as long as we also
+        protect ourselves from prying eyes on what we are doing.</li>
+    </ul>
+{% endblock %}

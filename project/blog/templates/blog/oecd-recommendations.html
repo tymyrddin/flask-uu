@@ -1,0 +1,48 @@
+{% extends "blogpost.html" %}
+
+{% block title %}
+<h1>OECD Recommendations</h1>
+{% endblock %}
+
+{% block date %}
+<p class="blogpost__date">Published on May 15, 2018</p>
+{% endblock %}
+
+{% block article %}
+<p>The Organisation for Economic Co-operation and
+Development (OECD) is an intergovernmental economic
+organisation with 35 member countries, founded in 1961
+to stimulate economic progress and world trade. It is
+a forum of countries describing themselves as
+committed to democracy and the market economy,
+providing a platform to compare policy experiences,
+seeking answers to common problems, identify good
+practices and coordinate domestic and international
+policies of its members.</p>
+<p>It’s recommendations for protection of personal data
+are:</p>
+<ul>
+<li>Notice — data subjects should be given notice when
+their data is being collected;</li>
+<li>Purpose — data should only be used for the purpose
+stated and not for any other purposes;</li>
+<li>Consent — data should not be disclosed without the
+data subject’s consent;</li>
+<li>Security — collected data should be kept secure
+from any potential abuses;</li>
+<li>Disclosure — data subjects should be informed as
+to who is collecting their data;</li>
+<li>Access — data subjects should be allowed to access
+their data and make corrections to any inaccurate
+data</li>
+<li>Accountability — data subjects should have a
+method available to them to hold data collectors
+accountable for not following the above principles.</li>
+</ul>
+<p>The <a
+href="{{ url_for('blog.posts', blog_title='gdpr') }}">EC
+General Data Protection Regulation (GDPR)</a> has
+incorporated all seven principles. The United States,
+while endorsing the recommendations, is not
+implementing them.</p>
+{% endblock %}

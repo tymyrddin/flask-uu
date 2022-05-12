@@ -1,0 +1,28 @@
+{% extends "recipe.html" %}
+
+{% block recipe_description %}
+    <h2><a href="">...</a></h2>
+<p>...</p>
+{% endblock %}
+
+{% block recipe_image %}
+<img src="{{ url_for('static', filename='img/....jpg') }}"  alt="..." />
+{% endblock %}
+
+{% block recipe_tips %}
+<p>...</p>
+{% endblock %}
+
+{% block recipe_ingredients %}
+<h2>List of Ingredients</h2>
+<ul>
+    <li>...</li>
+</ul>
+{% endblock %}
+
+{% block recipe_steps %}
+<h2>Resources</h2>
+<ol>
+    <li><a href="">...</a></li>
+</ol>
+{% endblock %}
