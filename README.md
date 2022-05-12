@@ -18,7 +18,7 @@ used to generate the static files based on the routes specified in the Flask app
 Pull down the source code from this GitLab repository:
 
 ```sh
-git clone git@gitlab.com:tymyrddin/flask-milliways.git
+git clone git@github.com:tymyrddin/flask-uu.git
 ```
 
 Create a new virtual environment:
