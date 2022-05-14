@@ -3,7 +3,6 @@ from flask import render_template, abort
 
 
 blog_post_titles = [
-    "apt-key",
     "completely-different",
     "nowai",
     "grey-areas",

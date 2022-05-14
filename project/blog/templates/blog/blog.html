@@ -9,21 +9,6 @@
 
     <div class="blog-post-card card-overlay">
         <img
-          src="{{ url_for('static', filename='img/key.jpg') }}"
-          alt="Black Pycharm"
-          class="blog-post-card__image" />
-        <div class="blog-post-card__body">
-            <a href="{{ url_for('blog.posts', blog_title='apt-key') }}">
-                <h2 class="recipe-title-long">apt-key deprecation</h2></a>
-            <p>After upgrading to Ubuntu 22.04, some repositories are disabled, and deprecation warnings on
-                its signing keys are given. <em>Warning: apt-key is deprecated. Manage
-        keyring files in trusted.gpg.d instead (see apt-key(8))</em></p>
-            <p class="blog-post-card__date">Published on May 12, 2022</p>
-        </div>
-    </div>
-
-    <div class="blog-post-card card-overlay">
-        <img
           src="{{ url_for('static', filename='img/larch.jpg') }}"
           alt="The Larch"
           class="blog-post-card__image" />
