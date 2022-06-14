@@ -1,5 +1,9 @@
 # Unseen University
 
+![Coverage](https://img.shields.io/badge/coverage-80%25-green) 
+[![Python application](https://github.com/tymyrddin/flask-uu/workflows/Python%20application/badge.svg?branch=main)](https://github.com/tymyrddin/flask-uu/actions) 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9ed82aed-cfb0-42fb-9289-dc4758fe743c/deploy-status)](https://app.netlify.com/sites/unseen-uni/deploys)
+
 ## Overview
 
 This Flask application displays the menu card of our Restaurant at the end of the 
@@ -10,8 +14,6 @@ Universe: https://uu.netlify.app/
 [Frozen-Flask](https://pythonhosted.org/Frozen-Flask/) is
 used to generate the static files based on the routes specified in the Flask app.  These static files are hosted on
 [Netlify](https://www.netlify.com).
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9ed82aed-cfb0-42fb-9289-dc4758fe743c/deploy-status)](https://app.netlify.com/sites/unseen-uni/deploys)
 
 ## Installation Instructions
 
