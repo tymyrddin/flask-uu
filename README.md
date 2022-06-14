@@ -15,6 +15,13 @@ Universe: https://uu.netlify.app/
 used to generate the static files based on the routes specified in the Flask app.  These static files are hosted on
 [Netlify](https://www.netlify.com).
 
+## Requirements
+
+* Python 3.10.4
+* Flask - micro-framework for web application development
+* Jinga - templating engine
+* Frozen-Flask - generates static files from Flask routes
+
 ## Installation Instructions
 
 Pull down the source code from this GitLab repository:
@@ -68,13 +75,6 @@ In the top-level directory, run the build script:
 ```
 
 The static files are generated in the */project/build/* directory, which can then be hosted on Netlify.
-
-## Requirements
-
-* Python 3.10.4
-* Flask - micro-framework for web application development
-* Jinga - templating engine
-* Frozen-Flask - generates static files from Flask routes
 
 ## Testing
 
