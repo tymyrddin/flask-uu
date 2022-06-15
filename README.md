@@ -1,6 +1,6 @@
 # Unseen University
 
-![Coverage](https://img.shields.io/badge/coverage-80%25-green) 
+[![Coverage](https://img.shields.io/badge/coverage-80%25-green)](https://github.com/tymyrddin/flask-uu/tree/main/tests) 
 [![GH Actions](https://github.com/tymyrddin/flask-uu/workflows/Python%20application/badge.svg?branch=main)](https://github.com/tymyrddin/flask-uu/actions) 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9ed82aed-cfb0-42fb-9289-dc4758fe743c/deploy-status)](https://app.netlify.com/sites/unseen-uni/deploys)
 
