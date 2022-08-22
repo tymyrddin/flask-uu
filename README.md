@@ -33,7 +33,7 @@ git clone git@github.com:tymyrddin/flask-uu.git
 Create a new virtual environment:
 
 ```sh
-$ cd flask-milliways
+$ cd flask-uu
 $ python3 -m venv venv
 ```
 
