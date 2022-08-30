@@ -7,7 +7,7 @@
 ## Overview
 
 This Flask application displays the menu card of our Restaurant at the end of the 
-Universe: https://uu.netlify.app/
+Universe: https://uu.tymyrddin.dev/
 
 ## Website
 
