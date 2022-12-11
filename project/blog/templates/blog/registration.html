@@ -14,19 +14,24 @@
     </div>
 
     <div class="page__article form">
-        <form name="contact" method="POST" data-netlify="true">
-          <p>
-            <label>Name: <input type="text" placeholder="eg. Corporal Cheery (or Cheri) Littlebottom" name="name" /></label>
-          </p>
-          <p>
-            <label>Email: <input type="email" placeholder="eg. littlebottom@lscpace.org" name="email" /></label>
-          </p>
-          <p>
-            <label>Message: <textarea placeholder="eg. Please (un)register me (from) for the  ...  faculty of your (otherwise) awesome University." name="message"></textarea></label>
-          </p>
-          <p>
-            <input type="submit" value="Send">
-          </p>
+        <form name="contact" method="POST"  netlify-honeypot="bot-field" data-netlify="true">
+            <p class="hidden">
+                <label>
+                  Don’t fill this out if you’re human: <input name="bot-field" />
+                </label>
+            </p>
+            <p>
+                <label>Name: <input type="text" placeholder="eg. Corporal Cheery (or Cheri) Littlebottom" name="name" /></label>
+            </p>
+            <p>
+                <label>Email: <input type="email" placeholder="eg. littlebottom@lscpace.org" name="email" /></label>
+            </p>
+            <p>
+                <label>Message: <textarea placeholder="eg. Please (un)register me (from) for the  ...  faculty of your (otherwise) awesome University." name="message"></textarea></label>
+            </p>
+            <p>
+                <input type="submit" value="Send">
+            </p>
         </form>
     </div>
 
