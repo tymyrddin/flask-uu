@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recipe-container">
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/scripts-network">
+            <img
+                src="{{ url_for('static', filename='portfolio/12.jpg') }}"
+                alt="Scripts"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Network hacking scripts</h2>
+                <p>Running with it</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/scripts-webapp">
+            <img
+                src="{{ url_for('static', filename='portfolio/4.jpg') }}"
+                alt="Scripts"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Application hacking scripts</h2>
+                <p>We need to have a talk ...</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://github.com/tymyrddin/scripts-cicd">
+            <img
+                src="{{ url_for('static', filename='portfolio/9.jpg') }}"
+                alt="Scripts"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">CI/CD hacking scripts</h2>
+                <p>On the same side now</p>
+            </div>
+        </a>
+    </div>
+    <div class="card">
+        <a href="https://github.com/tymyrddin/scripts-bash">
+            <img
+                src="{{ url_for('static', filename='portfolio/bash.png') }}"
+                alt="Scripts"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Bash/shell scripts</h2>
+                <p>foo Bar</p>
+            </div>
+        </a>
+    </div>
+    <div class="card">
+        <a href="https://github.com/tymyrddin/scripts-ps">
+            <img
+                src="{{ url_for('static', filename='portfolio/11.jpg') }}"
+                alt="Scripts"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Powershell scripts</h2>
+                <p>Those 'curly' quotes again</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+{% endblock %}
