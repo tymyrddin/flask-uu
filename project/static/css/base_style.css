@@ -253,7 +253,7 @@ nav ul {
 }
 
 .card__body p {
-  font-weight: lighter;
+  font-weight: normal;
   font-size: 0.9rem;
   padding-bottom: 0.45rem
 }
