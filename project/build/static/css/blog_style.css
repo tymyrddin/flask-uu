@@ -14,18 +14,20 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: var(--radius);
-}
-
-.blog-post-card__image {
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
+  color: white;
+  background-color: rgba(25, 25, 25, 0.9);
 }
 
 .blog-post-card__body {
   width: 100%;
   text-align: center;
   padding: 1rem 0;
+}
+
+.blog-post-card__image {
+  height: 16rem;
+  width: 100%;
+  object-fit: cover;
 }
 
 .blog-post-card__body h2 {
