@@ -3,6 +3,7 @@ from flask import render_template, abort
 
 
 blog_post_titles = [
+    "defendable-internet",
     "completely-different",
     "nowai",
     "grey-areas",
