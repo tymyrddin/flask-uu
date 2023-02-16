@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recipe-container">
+
+    <div class="card">
+        <a href="https://www.cdse.edu/Training/Security-Awareness-Games/">
+            <img
+                src="{{ url_for('static', filename='portfolio/center.png') }}"
+                alt="Cornucopia"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">CDSE: Security awareness games</h2>
+                <p>Quick ways to test your knowledge</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://www.sans.org/webcasts/introducing-pen-test-poster-pivots-payloads-board-game-109505/">
+            <img
+                src="{{ url_for('static', filename='portfolio/pivots.png') }}"
+                alt="Cornucopia"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">SANS Pivots & Payloads</h2>
+                <p>Penetration testing methods and techniques</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://www.cryptogogame.com">
+            <img
+                src="{{ url_for('static', filename='portfolio/cryptogo.png') }}"
+                alt="Doxed cards"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-extra-long">Carlos III de Madrid y Rey Juan Carlos</h2>
+                <p>Crypto Go: Symmetric cryptography</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://d0x3d.com">
+            <img
+                src="{{ url_for('static', filename='portfolio/doxed.png') }}"
+                alt="Doxed cards"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">d0x3d</h2>
+                <p>Network security attack and defence mechanics</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://dataheist.org/">
+            <img
+                src="{{ url_for('static', filename='portfolio/dataheist.png') }}"
+                alt="Thief"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Mark Barnabas Lee: Data Heist</h2>
+                <p>Data protection and personal cyber hygiene</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://sites.google.com/view/decisions-disruptions/">
+            <img
+                src="{{ url_for('static', filename='portfolio/lego.png') }}"
+                alt="Lego"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Decisions & Disruptions</h2>
+                <p>Security in industrial control systems RPG</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://owasp.org/www-project-cornucopia/">
+            <img
+                src="{{ url_for('static', filename='portfolio/cornucopia.png') }}"
+                alt="Cornucopia"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">OWASP Cornucopia</h2>
+                <p>Identify security requirements</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://www.blackhillsinfosec.com/projects/backdoorsandbreaches/">
+            <img
+                src="{{ url_for('static', filename='portfolio/thief.png') }}"
+                alt="Thief"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">BlackHill Backdoors & Breaches</h2>
+                <p>Incident response tabletop exercises</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://www.cisa.gov/cisa-tabletop-exercise-packages/">
+            <img
+                src="{{ url_for('static', filename='portfolio/cisa.png') }}"
+                alt="Cornucopia"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">CISA Cards</h2>
+                <p>Tabletop exercise packages</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+{% endblock %}

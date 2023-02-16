@@ -18,6 +18,24 @@ scripts_recipes_names = [
     "scripts-ps",
 ]
 
+courses_recipes_names = [
+    "courses-metasploid",
+    "courses-cybrary",
+    "courses-cisa",
+    "courses-antisyphon",
+]
+
+games_recipes_names = [
+    "games-backdoorsandbreaches",
+]
+
+pocs_recipes_names = [
+    "pocs-red",
+    "pocs-blue",
+    "pocs-green",
+    "pocs-purple",
+]
+
 
 @recipes_blueprint.route("/")
 def recipes():
@@ -27,6 +45,21 @@ def recipes():
 @recipes_blueprint.route("/labs/")
 def labs_recipes():
     return render_template("recipes/labs.html")
+
+
+@recipes_blueprint.route("/courses/")
+def courses_recipes():
+    return render_template("recipes/courses.html")
+
+
+@recipes_blueprint.route("/games/")
+def games_recipes():
+    return render_template("recipes/games.html")
+
+
+@recipes_blueprint.route("/pocs/")
+def pocs_recipes():
+    return render_template("recipes/pocs.html")
 
 
 @recipes_blueprint.route("/scripts/")

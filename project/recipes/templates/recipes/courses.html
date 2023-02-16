@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recipe-container">
+
+    <div class="card">
+        <a href="https://www.offensive-security.com/metasploit-unleashed/">
+            <img
+                src="{{ url_for('static', filename='portfolio/proving-grounds.png') }}"
+                alt="Red Hummingbird"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Metasploid Unleashed</h2>
+                <p>Free ethical hacking course by OffSec</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://www.cybrary.it/">
+            <img
+                src="{{ url_for('static', filename='portfolio/cybrary.png') }}"
+                alt="Cybrary"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Cybrary</h2>
+                <p>Guided pathways with threat-informed training</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://fedvte.usalearning.gov/public_fedvte.php">
+            <img
+                src="{{ url_for('static', filename='portfolio/cisa.png') }}"
+                alt="Cybrary"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">CISA</h2>
+                <p>Free incident response training</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://www.antisyphontraining.com/cyber-range/">
+            <img
+                src="{{ url_for('static', filename='portfolio/antisyphon.png') }}"
+                alt="Cybrary"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Antisyphon Cyber Range</h2>
+                <p>Affordable training environment</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+{% endblock %}
