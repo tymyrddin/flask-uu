@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recipe-container">
+
+    <div class="card">
+        <a href="https://www.intigriti.com/">
+            <img
+                src="{{ url_for('static', filename='portfolio/intigrity.png') }}"
+                alt="Intigriti"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Intigriti</h2>
+                <p>Hybrid pentest security testing</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="https://www.hackerone.com/">
+            <img
+                src="{{ url_for('static', filename='portfolio/hackerone.png') }}"
+                alt="Portswigger"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">HackerOne</h2>
+                <p>Security research into open source and software supply chain dependencies.</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+{% endblock %}

@@ -26,7 +26,15 @@ courses_recipes_names = [
 ]
 
 games_recipes_names = [
+    "games-securityawareness",
+    "games-pivotsandpayloads",
+    "games-cryptogo",
+    "games-doxed",
+    "games-dataheist",
+    "games-decisionsanddisruptions",
+    "games-cornucopia",
     "games-backdoorsandbreaches",
+    "games-cisacards",
 ]
 
 pocs_recipes_names = [
@@ -34,6 +42,13 @@ pocs_recipes_names = [
     "pocs-blue",
     "pocs-green",
     "pocs-purple",
+]
+
+bbh_recipes_names = [
+    "bbh-red",
+    "bbh-blue",
+    "bbh-green",
+    "bbh-purple",
 ]
 
 
@@ -65,3 +80,8 @@ def pocs_recipes():
 @recipes_blueprint.route("/scripts/")
 def scripts_recipes():
     return render_template("recipes/scripts.html")
+
+
+@recipes_blueprint.route("/bbh/")
+def bbh_recipes():
+    return render_template("recipes/bbh.html")
