@@ -37,18 +37,23 @@ games_recipes_names = [
     "games-cisacards",
 ]
 
-pocs_recipes_names = [
-    "pocs-red",
-    "pocs-blue",
-    "pocs-green",
-    "pocs-purple",
+writeups_recipes_names = [
+    "writeups-red",
+    "writeups-blue",
+    "writeups-green",
+    "writeups-purple",
+]
+
+screencasts_recipes_names = [
+    "screencasts-business",
+    "screencasts-deserialisation",
+    "screencasts-webcache",
 ]
 
 bbh_recipes_names = [
-    "bbh-red",
-    "bbh-blue",
-    "bbh-green",
-    "bbh-purple",
+    "bbh-openbbh",
+    "bbh-intigrity",
+    "bbh-hackerone",
 ]
 
 
@@ -72,9 +77,14 @@ def games_recipes():
     return render_template("recipes/games.html")
 
 
-@recipes_blueprint.route("/pocs/")
-def pocs_recipes():
-    return render_template("recipes/pocs.html")
+@recipes_blueprint.route("/writeups/")
+def writeups_recipes():
+    return render_template("recipes/writeups.html")
+
+
+@recipes_blueprint.route("/screencasts/")
+def screencasts_recipes():
+    return render_template("recipes/screencasts.html")
 
 
 @recipes_blueprint.route("/scripts/")

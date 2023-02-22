@@ -43,14 +43,27 @@
     </div>
 
     <div class="card">
-        <a href="{{ url_for('recipes.pocs_recipes') }}">
+        <a href="{{ url_for('recipes.writeups_recipes') }}">
             <img
-                src="{{ url_for('static', filename='portfolio/pocs.png') }}"
-                alt="Labs"
+                src="{{ url_for('static', filename='portfolio/writing.png') }}"
+                alt="Writeups"
                 class="card__image" />
             <div class="card__body">
-                <h2 class="recipe-title-long">Writeups and screencasts</h2>
+                <h2 class="recipe-title-long">Writeups</h2>
                 <p>Red, blue, green, purple</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="{{ url_for('recipes.screencasts_recipes') }}">
+            <img
+                src="{{ url_for('static', filename='portfolio/recording.png') }}"
+                alt="Screencasts"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Screencasts</h2>
+                <p>Recording proofs of concept</p>
             </div>
         </a>
     </div>

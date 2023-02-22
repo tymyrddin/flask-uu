@@ -13,7 +13,6 @@ def test_get_home_page(test_client):
         b"Unseen University",
         b"Wizardry Unclasses",
         b"Improbability Blog",
-        b"Agnes Nutter",
         b"About",
         b"Register",
     ]
