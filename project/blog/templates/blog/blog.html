@@ -9,6 +9,19 @@
 
     <div class="blog-post-card card-overlay">
         <img
+          src="{{ url_for('static', filename='img/new-password.png') }}"
+          alt="Monarch butterflies"
+          class="blog-post-card__image" />
+        <div class="blog-post-card__body">
+            <a href="{{ url_for('blog.posts', blog_title='credentials') }}">
+                <h2 class="recipe-title-long">It's time to choose your new password</h2></a>
+            <p>Some of the most common techniques to capture credentials to keep in mind when choosing a new one. The tension, the crashing brain ...</p>
+            <p class="blog-post-card__date">Published on February 24, 2023</p>
+        </div>
+    </div>
+
+    <div class="blog-post-card card-overlay">
+        <img
           src="{{ url_for('static', filename='img/box.jpg') }}"
           alt="Pandora's box"
           class="blog-post-card__image" />
