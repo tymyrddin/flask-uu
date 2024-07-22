@@ -19,19 +19,20 @@
         <!-- Local CSS file for styling the application-->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/base_style.css') }}">
 
+        {{ font_awesome.load_js() }}
+
         <!-- Additional Styling -->
         {% block styling %}
         {% endblock %}
 
-        {{ fontawesome_html() }}
     </head>
 
     <body>
         <header>
-            <h1><a href="/">Unseen University</a></h1>
+            <h1><a href="https://tymyrddin.dev">Ty Myrddin Home</a></h1>
             <nav>
                 <ul>
-                    <li class="nav__item"><a href="{{ url_for('recipes.recipes') }}" class="nav__link">Wizardry Unclasses</a></li>
+                    <li class="nav__item"><a href="{{ url_for('recipes.recipes') }}" class="nav__link">Unseen University</a></li>
                     <li class="nav__item"><a href="{{ url_for('blog.blog') }}" class="nav__link">Improbability Blog</a></li>
                     <li class="nav__item"><a href="{{ url_for('blog.about') }}" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="{{ url_for('blog.registration') }}" class="nav__link">Register</a></li>
@@ -46,7 +47,7 @@
         </main>
 
         <footer>
-            <p><a href="https://www.tymyrddin.dev/">Ty Myrddin</a> - <a rel="me" href="https://mastodon.social/@barzh">Mastodon</a> - <a rel="me" href="https://tube.spdns.org/a/barzh/video-channels">Move IT tube</a> - <a rel="me" href="https://github.com/tymyrddin">Github</a></p>
+            <p><a href="https://www.tymyrddin.dev/">Ty Myrddin</a> - <a rel="me" href="https://mastodon.social/@barzh">Mastodon</a> - <a rel="me" href="https://tube.spdns.org/a/barzh/video-channels">Move IT tube</a> - <a rel="me" href="https://github.com/tymyrddin">GitHub</a> - <a rel="me" href="https://gitlab.com/tymyrddin">Gitlab</a></p>
         </footer>
     </body>
 </html>

@@ -103,7 +103,7 @@ header {
 }
 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   header {
     padding: 1rem 2rem;
     flex-direction: row;
@@ -125,7 +125,7 @@ header h1 a {
   color: rgba(163,25,22,1);
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
     header h1 {
       text-align: unset;
       font-size: 1rem;
@@ -151,7 +151,7 @@ nav ul {
   list-style: none;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   nav ul {
     justify-content: space-between;
   }
@@ -177,7 +177,7 @@ nav ul {
   margin-left: 0.5rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
     .nav__link, .nav__link:visited {
         font-size: 1rem;
     }
@@ -361,6 +361,3 @@ pre code {
 	}
 }
 
-.content {
-  padding: 1em;
-}

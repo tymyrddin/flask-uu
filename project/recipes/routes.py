@@ -95,3 +95,8 @@ def scripts_recipes():
 @recipes_blueprint.route("/bbh/")
 def bbh_recipes():
     return render_template("recipes/bbh.html")
+
+
+@recipes_blueprint.route('/404/')
+def fourohfour_recipes():
+    return render_template('recipes/404.html')

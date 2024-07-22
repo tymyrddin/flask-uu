@@ -10,8 +10,8 @@ def test_get_home_page(test_client):
     THEN check the response is valid
     """
     header_items = [
+        b"Ty Myrddin Home",
         b"Unseen University",
-        b"Wizardry Unclasses",
         b"Improbability Blog",
         b"About",
         b"Register",
