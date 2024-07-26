@@ -1,30 +1,27 @@
 # Unseen University
 
-[![Coverage](https://img.shields.io/badge/coverage-80%25-green)](https://github.com/tymyrddin/flask-uu/tree/main/tests) 
-[![GH Actions](https://github.com/tymyrddin/flask-uu/workflows/Python%20application/badge.svg?branch=main)](https://github.com/tymyrddin/flask-uu/actions) 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9ed82aed-cfb0-42fb-9289-dc4758fe743c/deploy-status)](https://app.netlify.com/sites/unseen-uni/deploys)
+[![Python flask application](https://github.com/tymyrddin/flask-uu/actions/workflows/python-app.yml/badge.svg)](https://github.com/tymyrddin/flask-uu/actions/workflows/python-app.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/9ed82aed-cfb0-42fb-9289-dc4758fe743c/deploy-status)](https://app.netlify.com/sites/unseen-uni/deploys)
 
 ## Overview
 
-This Flask application displays the menu card of our Restaurant at the end of the 
-Universe: https://uu.tymyrddin.dev/
+This Flask application displays the menu card of our Restaurant at the end of the Universe: https://uu.tymyrddin.dev/
 
 ## Website
 
-[Frozen-Flask](https://pythonhosted.org/Frozen-Flask/) is
+JAMStack: [Frozen-Flask](https://pythonhosted.org/Frozen-Flask/) is
 used to generate the static files based on the routes specified in the Flask app.  These static files are hosted on
 [Netlify](https://www.netlify.com).
 
 ## Requirements
 
-* Python 3.10.4
+* Python 3.11
 * Flask - micro-framework for web application development
 * Jinga - templating engine
 * Frozen-Flask - generates static files from Flask routes
 
 ## Installation Instructions
 
-Pull down the source code from this GitLab repository:
+Pull down the source code from this repository:
 
 ```sh
 git clone git@github.com:tymyrddin/flask-uu.git
