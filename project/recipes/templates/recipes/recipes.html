@@ -4,45 +4,6 @@
 <div class="recipe-container">
 
     <div class="card">
-        <a href="{{ url_for('recipes.labs_recipes') }}">
-            <img
-                src="{{ url_for('static', filename='portfolio/labs.png') }}"
-                alt="Labs"
-                class="card__image" />
-            <div class="card__body">
-                <h2 class="recipe-title-long">Labs</h2>
-                <p>Hands-on</p>
-            </div>
-        </a>
-    </div>
-
-    <div class="card">
-        <a href="{{ url_for('recipes.games_recipes') }}">
-            <img
-                src="{{ url_for('static', filename='portfolio/games.png') }}"
-                alt="Labs"
-                class="card__image" />
-            <div class="card__body">
-                <h2 class="recipe-title-long">Games</h2>
-                <p>On the table</p>
-            </div>
-        </a>
-    </div>
-
-    <div class="card">
-        <a href="{{ url_for('recipes.courses_recipes') }}">
-            <img
-                src="{{ url_for('static', filename='portfolio/training.png') }}"
-                alt="Labs"
-                class="card__image" />
-            <div class="card__body">
-                <h2 class="recipe-title-long">Training</h2>
-                <p>Free and low budget train rides</p>
-            </div>
-        </a>
-    </div>
-
-    <div class="card">
         <a href="{{ url_for('recipes.writeups_recipes') }}">
             <img
                 src="{{ url_for('static', filename='portfolio/writing.png') }}"
@@ -77,6 +38,45 @@
             <div class="card__body">
                 <h2 class="recipe-title-long">Scripts and code</h2>
                 <p>Fifty shades of frustration</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="{{ url_for('recipes.games_recipes') }}">
+            <img
+                src="{{ url_for('static', filename='portfolio/games.png') }}"
+                alt="Labs"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Games</h2>
+                <p>On the table</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="{{ url_for('recipes.labs_recipes') }}">
+            <img
+                src="{{ url_for('static', filename='portfolio/labs.png') }}"
+                alt="Labs"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Labs</h2>
+                <p>Hands-on</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="{{ url_for('recipes.courses_recipes') }}">
+            <img
+                src="{{ url_for('static', filename='portfolio/training.png') }}"
+                alt="Labs"
+                class="card__image" />
+            <div class="card__body">
+                <h2 class="recipe-title-long">Training</h2>
+                <p>Free and low budget train rides</p>
             </div>
         </a>
     </div>
