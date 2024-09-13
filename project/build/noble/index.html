@@ -117,7 +117,7 @@ ff02::2 ip6-allrouters</code></pre>
 
 <pre><code>Err:2 https://updates.signal.org/desktop/apt xenial/main amd64 signal-desktop amd64 7.24.1
     Error reading from server - read (5: Input/output error) [IP: 172.64.155.138 443]
-Fetched 1 280 kB in 18min 13s (1 171 B/s)
+Fetched 1 280 kB in 18min 13s (1 171 B/s)
 E: Failed to fetch https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_7.24.1_amd64.deb
     Error reading from server - read (5: Input/output error) [IP: 172.64.155.138 443]
 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?</code></pre>
@@ -320,6 +320,27 @@ Do you want to continue? [Y/n] Y
 <p>Do it, and keep fingers crossed.</p>
 
 <code>nina@tardis:~$ sudo reboot</code>
+
+<h2>Dang! Network problems</h2>
+
+<p>Network manager was gone. Nowhere to be found. And <code>dhcpcd</code> had a dangling <code>/etc/resolv.conf</code> symlink problem.</p>
+
+<p>Try this first:</p>
+
+<pre><code>sudo dhcpcd
+[sudo] password for nina:
+dhcpcd-10.0.6 starting
+dev: loaded udev
+...
+</code></pre>
+
+<p>Then:</p>
+
+<pre><code>sudo apt install network-manager</code></pre>
+
+<p>If no dangling symlink problem appeared because of broken packages, that's it. Else:</p>
+
+<pre><code>sudo apt install systemd-resolved</code></pre>
 
 <h2>Aftermath</h2>
 
