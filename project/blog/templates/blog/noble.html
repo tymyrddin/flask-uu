@@ -1,0 +1,356 @@
+{% extends "blogpost.html" %}
+
+{% block title %}
+<h1>Upgrading to Noble Numbat</h1>
+{% endblock %}
+
+{% block date %}
+<p class="blogpost__date">Published on Sept 13, 2024</p>
+{% endblock %}
+
+{% block image %}
+<img
+  src="{{ url_for('static', filename='img/noble-numbat.png') }}"
+  alt="Integration"
+  class="blogpost__image" />
+{% endblock %}
+
+{% block article %}
+<p>For a change, I decided to try the do-release-upgrade script. Ugh.</p>
+
+<h2>Prelims</h2>
+<pre>
+<code>sudo ufw allow 1022/tcp
+sudo apt-install update-manager-core
+</code>
+</pre>
+
+<h2>Run script</h2>
+
+<pre><code>sudo do-release-upgrade</code></pre>
+
+<p>It was at it all night and exited with error. My system is still running though, so I am not rebooting. No way.
+Reading online I learn <a href="https://discourse.ubuntu.com/t/ask-ubuntu-is-flooded-with-failed-22-04-24-04-upgrade-issues/47701">many people ended without desktop and with other problems</a>,
+so I spun up another terminal to drop back to ...</p>
+
+<h2>The normal way</h2>
+
+<pre><code>nina@tardis:~$ sudo apt-get update
+sudo: unable to resolve host tardis: Name or service not known
+
+nina@tardis:~$ sudo apt-get dist-upgrade
+sudo: unable to resolve host tardis: Name or service not known</code></pre>
+
+<p>Huh? The system lost my hostname as one of the results of the scripted attempt. Checking ...</p>
+
+<pre><code>nina@tardis:~$ $hostname
+nina@tardis:~$ cat /etc/hostname
+tardis
+nina@tardis:~$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	missy
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters</code></pre>
+
+<p>Okay, add <code>127.0.0.1	tardis</code> to <code>/etc/hosts</code>, just under <code>127.0.0.1	localhost</code> in <code>/etc/hosts</code>.</p>
+
+<p>And continue with:</p>
+
+<pre><code>nina@tardis:~$ sudo apt-get dist-upgrade</code></pre>
+
+<h2>Signal desktop</h2>
+
+<pre><code>Err:2 https://updates.signal.org/desktop/apt xenial/main amd64 signal-desktop amd64 7.24.1
+    Error reading from server - read (5: Input/output error) [IP: 172.64.155.138 443]
+Fetched 1 280 kB in 18min 13s (1 171 B/s)
+E: Failed to fetch https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_7.24.1_amd64.deb
+    Error reading from server - read (5: Input/output error) [IP: 172.64.155.138 443]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?</code></pre>
+
+<p>Temporarily removed the package, fully expecting to re-install it later again when I have more time. Still runs on phone,
+so not a problem, the desktop was only additional anyway.</p>
+
+<h2>Chromium snap blocks</h2>
+
+<p>My <code>dist-upgrade</code> process kept hanging on the chromium snap and did not move beyond it.</p>
+
+<pre><code>Errors were encountered while processing:
+ /tmp/apt-dpkg-install-MK7qUb/000-chromium-browser_2%3a1snap1-0ubuntu2_amd64.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)</code></pre>
+
+<p>Trying to install it separately I got more information:</p>
+
+<pre><code>The following packages have unmet dependencies.
+ chromium-browser-l10n : Depends: chromium-browser (>= 2:1snap1-0ubuntu2) but 1:85.0.4183.83-0ubuntu2.22.04.1 is installed</code></pre>
+
+<p>I lost my temper and because I hardly ever use it, I first purged <code>chromium-browser-l10n</code>, then
+<code>chromium-browser</code>, and ran the <code>dist-upgrade</code> again. Now it finally moved on.</p>
+
+<h2>Python warnings</h2>
+
+<p>In Python, backslashes are used to introduce special character sequences known as escape sequences. For example,
+the escape sequence ' ' can represent a newline character, and '\t' a tab. But if a backslash is followed by
+an invalid character, it raises a warning.</p>
+
+<p>In general, a warning does not halt program execution, but it is essential to address these warnings, as they can
+indicate potential issues with the code. Ignoring these warnings can lead to unintended consequences, such as
+incorrect string formatting, unexpected behaviour, or even security vulnerabilities.</p>
+
+<p>I encountered these, you will encounter yours:</p>
+
+<h3>python3-ipywidgets</h3>
+<pre><code>Setting up python3-ipywidgets (8.1.1-2) ...
+/usr/lib/python3/dist-packages/ipywidgets/widgets/tests/test_traits.py:61: SyntaxWarning: invalid escape sequence '\.'
+  'var(--my-color-\.)', # CSS variable with escaped characters
+  ...</code></pre>
+
+<p>This package contains <a href="https://github.com/jupyter-widgets/ipywidgets">interactive widgets for the Jupyter
+    notebook (Python 3)</a> [universe].</p>
+
+<p>Because I do not expect to use widgets in the near future, I removed the widgets package. If ever I need them, I will
+install what exists then.</p>
+
+<h3>python3-future</h3>
+
+<pre><code>Unpacking python3-future (0.18.2-6ubuntu2) over (0.18.2-6ubuntu2) ...
+Setting up python3-future (0.18.2-6ubuntu2) ...
+/usr/lib/python3/dist-packages/future/backports/email/_header_value_parser.py:66
+2: SyntaxWarning: invalid escape sequence '\(''(', '\(').replace(
+/usr/lib/python3/dist-packages/future/backports/email/_header_value_parser.py:66
+3: SyntaxWarning: invalid escape sequence '\)'')', '\)')
+/usr/lib/python3/dist-packages/future/backports/email/_header_value_parser.py:13
+...
+[snip]
+...
+  _queryprog = re.compile('^(.*)\?([^?]*)$')
+/usr/lib/python3/dist-packages/past/types/oldstr.py:23:
+    SyntaxWarning: invalid escape sequence '\d'
+  """
+</code></pre>
+
+<p>This snippet shows warnings for <a href="https://python-future.org/">clean single-source support for Python 3
+    and 2 - Python 3.x</a>.</p>
+
+<p><code>python3-future</code> has been removed from Debian. Future is not compatible with Python 3.12 and many
+projects have been or are deprecating support for Python 2.7 and Python 3.5. I removed the offending package
+and hopefully will not have a problem. Fingers crossed.</p>
+
+<h3>bleachbit</h3>
+
+<pre><code>Setting up bleachbit (4.6.0-3) ...
+/usr/share/bleachbit/bleachbit/Action.py:42:
+    SyntaxWarning: invalid escape sequence '\['return re.search('[?*\[\]]', s) is not None
+/usr/share/bleachbit/bleachbit/Cleaner.py:402:
+    SyntaxWarning: invalid escape sequence '\W'</code></pre>
+
+<p>I kept bleachbit as I use it a lot.</p>
+
+<h2>os-prober</h2>
+
+<pre><code>Warning: os-prober will not be executed to detect other bootable partitions.
+Systems on them will not be added to the GRUB boot configuration.
+Check GRUB_DISABLE_OS_PROBER documentation entry.
+Adding boot menu entry for UEFI Firmware Settings ...
+done</code></pre>
+
+<p>The OS_prober feature <a href="https://lists.ubuntu.com/archives/ubuntu-devel/2021-December/041769.html">has been
+    disabled by default since GRUB 2.06</a>, the version Ubuntu 22.04 LTS shipped with. A choice by upstream to
+address possible security issues with the OS-detecting feature.</p>
+
+<p>You can add <code>GRUB_DISABLE_OS_PROBER=false</code> to the first section in <code>/etc/default/grub</code>, save,
+and then run <code>sudo update-grub</code> to detect your other systems.</p>
+
+<h2>Check upgrade was done</h2>
+
+<pre><code>nina@tardis:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.1 LTS
+Release:	24.04
+Codename:	noble</code></pre>
+
+<h2>dkms</h2>
+
+<pre><code>Processing triggers for linux-image-6.8.0-44-generic (6.8.0-44.44) ...
+/etc/kernel/postinst.d/dkms:
+ * dkms: running auto installation service for kernel 6.8.0-44-generic
+ * dkms: autoinstall for kernel 6.8.0-44-generic
+   ...done.</code></pre>
+
+<p>The kernel may be missing a module or two (wooops, them were not compiled). Use this script to rebuild every
+dkms-controlled module for every installed kernel. Name it <code>dkmsbuildall.sh</code> for example.</p>
+
+<pre><code>nina@tardis:~$ cd /usr/local/sbin
+nina@tardis:/usr/local/sbin$ sudo vi dkmsbuildall.sh
+[sudo] password for nina:
+nina@tardis:/usr/local/sbin$ cat dkmsbuildall.sh
+#!/bin/bash
+ls -d /usr/src/linux-headers-* \
+ | sed -e 's/.*linux-headers-//' \
+ | grep generic \
+ | sort -V \
+ | tac \
+ | xargs -n1 /usr/lib/dkms/dkms_autoinstaller start
+nina@tardis:/usr/local/sbin$</code></pre>
+
+<p>Modify the file permissions to allow execution of the script, and execute:</p>
+
+<pre><code>
+nina@tardis:/usr/local/sbin$ sudo chmod u+x dkmsbuildall.sh
+nina@tardis:/usr/local/sbin$ sudo ./dkmsbuildall.sh
+ * dkms: running auto installation service for kernel 6.8.0-44-generic
+ * dkms: autoinstall for kernel 6.8.0-44-generic                         [ OK ]
+ * dkms: running auto installation service for kernel 6.8.0-40-generic
+ * dkms: autoinstall for kernel 6.8.0-40-generic                         [ OK ]
+ * dkms: running auto installation service for kernel 6.5.0-44-generic
+ * dkms: autoinstall for kernel 6.5.0-44-generic                         [ OK ]
+ * dkms: running auto installation service for kernel 6.2.0-39-generic
+ * dkms: autoinstall for kernel 6.2.0-39-generic                         [ OK ]
+ * dkms: running auto installation service for kernel 5.15.0-119-generic
+ * dkms: autoinstall for kernel 5.15.0-119-generic                       [ OK ]
+</code></pre>
+
+<h2>Ubuntu desktop</h2>
+
+<p>What desktop I am using:</p>
+
+<pre><code>nina@tardis:~$ ls /usr/bin/*session
+/usr/bin/dbus-run-session  /usr/bin/gnome-session
+</code></pre>
+
+<p>Just to be sure, reinstall the necessaries:</p>
+
+<pre><code>nina@tardis:~$ sudo apt-get install --reinstall gnome-terminal gnome-shell-ubuntu-extensions gnome-shell-extensions
+...
+[snip]
+...
+The following additional packages will be installed:
+  chrome-gnome-shell gir1.2-gtop-2.0 gnome-browser-connector
+  gnome-shell-extension-prefs
+Suggested packages:
+  chromium | chromium-browser
+The following NEW packages will be installed
+  chrome-gnome-shell gir1.2-gtop-2.0 gnome-browser-connector
+  gnome-shell-extension-prefs gnome-shell-extensions
+  gnome-shell-ubuntu-extensions
+0 to upgrade, 6 to newly install, 1 reinstalled, 0 to remove and 1 not to upgrade.
+Need to get 208 kB/425 kB of archives.
+After this operation, 1 262 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+...
+</code></pre>
+
+<p>And:</p>
+
+<pre><code>nina@tardis:~$ sudo apt-get install --reinstall ubuntu-desktop
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  ...
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  ubuntu-advantage-tools
+The following packages will be upgraded:
+  ubuntu-advantage-tools
+1 to upgrade, 0 to newly install, 1 reinstalled, 0 to remove and 1 not to upgrade.
+Need to get 0 B/13,4 kB of archives.
+After this operation, 3 072 B disk space will be freed.
+Do you want to continue? [Y/n] Y
+...
+</code></pre>
+
+<h2>Reboot</h2>
+
+<p>Do it, and keep fingers crossed.</p>
+
+<code>nina@tardis:~$ sudo reboot</code>
+
+<h2>Aftermath</h2>
+
+<h3>Close port:</h3>
+
+<pre><code>nina@tardis:~$ sudo ufw delete 1022/tcp</code></pre>
+
+<h3>Remove crud</h3>
+
+<code>nina@tardis:~$ sudo apt autoremove</code>
+
+<h3>Upgrading PostgreSQL</h3>
+
+<p>Okay, this one is normal after a major PostgreSQL upgrade.</p>
+
+<pre><code>
+Creating new PostgreSQL cluster 16/main ...
+/usr/lib/postgresql/16/bin/initdb -D /var/lib/postgresql/16/main --auth-local pe
+er --auth-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with this locale configuration:
+  provider:    libc
+  LC_COLLATE:  en_US.UTF-8
+  LC_CTYPE:    en_US.UTF-8
+  LC_MESSAGES: en_US.UTF-8
+  LC_MONETARY: fr_FR.UTF-8
+  LC_NUMERIC:  fr_FR.UTF-8
+  LC_TIME:     fr_FR.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/16/main ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Europe/Paris
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+</code></pre>
+
+<p>That is, of course, <a href="https://www.postgresql.org/docs/current/upgrading.html">not the end of the story</a>.
+    Been there, done that several times already, ate the t-shirts. Did not upgrade from 14 to 15 yet even.</p>
+
+<p>Now the current clusters will have two version of postgresql, in my case 14 and 16 because I could not be bothered to do the data upgrade to 15:</p>
+
+<pre><code>nina@tardis:~$ sudo pg_lsclusters
+[sudo] password for nina:
+Ver Cluster Port Status Owner    Data directory              Log file
+14  main    5432 online postgres /var/lib/postgresql/14/main /var/log/postgresql/postgresql-14-main.log
+16  main    5433 online postgres /var/lib/postgresql/16/main /var/log/postgresql/postgresql-16-main.log
+</code></pre>
+
+<p>Stop the new version:</p>
+
+<pre><code>nina@tardis:~$ sudo pg_dropcluster 16 main --stop</code></pre>
+
+<p>Start the upgrade process:</p>
+
+<pre><code>nina@tardis:~$ sudo pg_upgradecluster 14 main</code></pre>
+
+<p>Monitor the process, and when done without problems, remove the old version:</p>
+
+<pre><code>nina@tardis:~$ sudo pg_dropcluster 14 main</code></pre>
+
+<p>Purge the old package:</p>
+
+<pre><code>nina@tardis:~$ sudo apt purge postgresql-14 postgresql-client-14</code></pre>
+
+<p>Double-check the current clusters:</p>
+
+<pre><code>nina@tardis:~$ sudo pg_lsclusters</code></pre>
+
+<h2>Sigh</h2>
+
+<p>Big one.</p>
+
+{% endblock %}

@@ -25,6 +25,7 @@ blog_post_titles = [
     "oecd-recommendations",
     "data-retention-legislation-eu",
     "gdpr",
+    "noble",
 ]
 
 
