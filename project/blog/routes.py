@@ -26,6 +26,7 @@ blog_post_titles = [
     "data-retention-legislation-eu",
     "gdpr",
     "noble",
+    "pagers",
 ]
 
 
