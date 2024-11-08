@@ -27,6 +27,7 @@ blog_post_titles = [
     "gdpr",
     "noble",
     "pagers",
+    "mini-clouds",
 ]
 
 
