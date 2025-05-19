@@ -12,7 +12,6 @@ def test_get_home_page(test_client):
     header_items = [
         b"Ty Myrddin Home",
         b"Unseen University",
-        b"Improbability Blog",
         b"About",
         b"Register",
     ]

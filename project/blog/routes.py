@@ -43,12 +43,3 @@ def posts(blog_title):
 
     return render_template(f"blog/{blog_title}.html")
 
-
-@blog_blueprint.route("/about/")
-def about():
-    return render_template("blog/about.html")
-
-
-@blog_blueprint.route("/registration/")
-def registration():
-    return render_template("blog/registration.html")

@@ -100,3 +100,12 @@ def bbh_recipes():
 @recipes_blueprint.route('/404/')
 def fourohfour_recipes():
     return render_template('recipes/404.html')
+
+@recipes_blueprint.route("/about/")
+def about():
+    return render_template("recipes/about.html")
+
+
+@recipes_blueprint.route("/registration/")
+def registration():
+    return render_template("recipes/registration.html")
